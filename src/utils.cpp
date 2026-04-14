@@ -1,6 +1,6 @@
 #include <iostream>
-#include "utils.h"
-#include "MainFunctions.h"
+#include "../include/utils.h"
+#include "../include/functions.h"
 
 const std::string INCORRECT_FILE_TYPE_MSG = "Incorrect file type provided! Try using -h OR -help flag to get help information.";
 

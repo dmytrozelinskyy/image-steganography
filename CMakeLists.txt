@@ -4,9 +4,12 @@ project(TestEnvironment)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(TestEnvironment
-        BMPHeaderStruct.h
-        MainFunctions.h
-        main.cpp
-        utils.h
-        utils.cpp
+        src/main.cpp
+        src/utils.cpp
+        include/bmp_header.h
+        include/ppm_header.h
+        include/utils.h
+        include/file_io.h
+        include/functions.h
+        src/file_io.cpp
 )

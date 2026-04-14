@@ -4,11 +4,10 @@
 #include <fstream>
 #include <vector>
 #include <bitset>
-#include <cstdint>
 
-#include "BMPHeaderStruct.h"
-#include "PPMHeaderStruct.h"
-#include "FileReadOrWrite.h"
+#include "../include/bmp_header.h"
+#include "../include/ppm_header.h"
+#include "../include/file_io.h"
 
 
 
