@@ -62,3 +62,10 @@ compile_commands.json
 *.vcxproj*
 *.filters
 *.code-workspace
+
+# Build output
+main
+
+# Generated files
+assets/*_encrypted.bmp
+assets/*_encrypted.ppm
