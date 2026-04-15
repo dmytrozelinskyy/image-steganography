@@ -101,7 +101,9 @@ namespace ppm {
         }
         ppmHeader.type = PPMType::P6;
 
-        file >> ppmHeader.width >> ppmHeader.height >> ppmHeader.max_color_val;
+        int maxColor;
+        file >> ppmHeader.width >> ppmHeader.height >> maxColor;
+        ppmHeader.max_color_val = static_cast<uint8_t>(maxColor);
         file.ignore();
 
         size_t numberOfPixels = static_cast<size_t>(ppmHeader.width) * static_cast<size_t>(ppmHeader.height);

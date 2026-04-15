@@ -317,6 +317,7 @@ namespace ppm {
         }
 
         uint32_t msgLength = std::bitset<32>(bitString.substr(0, 32)).to_ulong();
+        // std::cerr << "DEBUG: Message length: " << msgLength << '\n';
 
         if (msgLength == 0 || msgLength * 8 + 32 > bitString.size()) {
             std::cerr << "No valid message found in image.\n";
