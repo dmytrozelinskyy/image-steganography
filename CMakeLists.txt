@@ -12,4 +12,5 @@ add_executable(TestEnvironment
         include/file_io.h
         include/functions.h
         src/file_io.cpp
+        src/functions.cpp
 )

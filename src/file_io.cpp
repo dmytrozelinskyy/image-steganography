@@ -4,7 +4,7 @@
 
 namespace bmp {
 
-    auto readFromBMP(const std::string &path, BMP_FileHeader &fileHeader,
+    bool readFromBMP(const std::string &path, BMP_FileHeader &fileHeader,
                      BMP_FileInfoHeader &fileInfoHeader, std::vector<unsigned char> &pixelData)
     {
         std::ifstream file(path,std::ios::binary);
@@ -45,7 +45,7 @@ namespace bmp {
         return true;
     }
 
-    auto writeToBMP(const std::string& path, std::vector<unsigned char>& pixelData,
+    bool writeToBMP(const std::string& path, std::vector<unsigned char>& pixelData,
                     int width, int height)
     {
         if (width <= 0 || height <= 0) {
@@ -85,7 +85,7 @@ namespace bmp {
 }
 
 namespace ppm {
-    auto readFromPPM(const std::string &path, PPM_FileHeader &ppmHeader)
+    bool readFromPPM(const std::string &path, PPM_FileHeader &ppmHeader)
     {
         std::ifstream file(path,std::ios::binary);
         if (!file.is_open()) {
@@ -116,7 +116,7 @@ namespace ppm {
         return true;
     }
 
-    auto writeToPPM(const std::string &path, PPM_FileHeader &ppmImage)
+    bool writeToPPM(const std::string &path, PPM_FileHeader &ppmImage)
     {
         std::ofstream file(path, std::ios::binary);
         if (!file) {
