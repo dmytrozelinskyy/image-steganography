@@ -137,9 +137,9 @@ namespace bmp
             for (int x = 0; x < fileInfoHeader.width; ++x) {
                 size_t index = (static_cast<size_t>(x) + static_cast<size_t>(y) * fileInfoHeader.width) * 3;
 
-                extractBits(std::bitset<8>(pixelData[index]));     // blue
-                extractBits(std::bitset<8>(pixelData[index + 1])); // green
-                extractBits(std::bitset<8>(pixelData[index + 2])); // red
+                extractBits(std::bitset<8>(pixelData[index + 2]));      // red
+                extractBits(std::bitset<8>(pixelData[index + 1]));      // green
+                extractBits(std::bitset<8>(pixelData[index]));          // blue
             }
         }
 
@@ -186,7 +186,7 @@ namespace bmp
         if (requiredCapacity > capacity) {
             std::cerr << "Message too large to be encrypted in this image.\n";
         } else {
-            std::cout << "Message fits - image has: " << (capacity - requiredCapacity) << " bytes to sapre.\n";
+            std::cout << "Message fits - image has: " << (capacity - requiredCapacity) << " bytes to spare.\n";
         }
     }
 }
@@ -259,7 +259,7 @@ namespace ppm {
             for (uint32_t x = 0; x < imageHeader.width; ++x) {
                 if(bitIndex >= bits.size())
                 {
-                    std::string outPath = path.substr(0, path.rfind('.')) + "_encrypted.bmp";
+                    std::string outPath = path.substr(0, path.rfind('.')) + "_encrypted.ppm";
                     if (!ppm::writeToPPM(outPath, imageHeader)) {
                         std::cerr << "Failed to write encrypted file.\n";
                         return;
@@ -305,9 +305,9 @@ namespace ppm {
             for (uint32_t x = 0; x < imageHeader.width; ++x) {
                 size_t index = (x + y * imageHeader.width) * 3;
 
-                extractBits(std::bitset<8>(imageHeader.image_data[index]));     // blue
-                extractBits(std::bitset<8>(imageHeader.image_data[index + 1])); // green
-                extractBits(std::bitset<8>(imageHeader.image_data[index + 2])); // red
+                extractBits(std::bitset<8>(imageHeader.image_data[index + 2]));     // red
+                extractBits(std::bitset<8>(imageHeader.image_data[index + 1]));     // green
+                extractBits(std::bitset<8>(imageHeader.image_data[index]));         // blue
             }
         }
 
@@ -352,7 +352,7 @@ namespace ppm {
         if (requiredCapacity > capacity) {
             std::cerr << "Message too large to be encrypted in this image.\n";
         } else {
-            std::cout << "Message fits - image has: " << (capacity - requiredCapacity) << " bytes to sapre.\n";
+            std::cout << "Message fits - image has: " << (capacity - requiredCapacity) << " bytes to spare.\n";
         }
     }
 }
