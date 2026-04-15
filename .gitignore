@@ -69,3 +69,5 @@ main
 # Generated files
 assets/*_encrypted.bmp
 assets/*_encrypted.ppm
+
+ImageStegonography/
